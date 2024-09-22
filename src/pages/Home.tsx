@@ -1,8 +1,7 @@
-import React from 'react'
-import Tour from '../components/Tour'
+import Tours from '../components/Tours'
 
 const Home = () => {
-	return <Tour />
+	return <Tours />
 }
 
 export default Home
