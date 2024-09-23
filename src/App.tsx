@@ -5,13 +5,14 @@ import UpdateTour from './pages/UpdateTour'
 import { useState, useEffect } from 'react'
 import supabase from './config/supabaseClient'
 
-interface Tour {
+export type Tour = {
 	id: number
 	name: string
 	image: string
 	info: string
 	price: string
 }
+
 function App() {
 	const [tours, setTours] = useState<Tour[]>([])
 
