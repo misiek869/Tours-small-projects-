@@ -1,21 +1,17 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import { z } from 'zod'
 import Home from './pages/Home'
 import CreateTour from './pages/CreateTour'
 import UpdateTour from './pages/UpdateTour'
 import { useState, useEffect } from 'react'
 import supabase from './config/supabaseClient'
 
-const tourSchema = z.object({
-	id: z.number(),
-	name: z.string(),
-	image: z.string(),
-	info: z.string(),
-	price: z.string(),
-})
-
-type Tour = z.infer<typeof tourSchema>
-
+interface Tour {
+	id: number
+	name: string
+	image: string
+	info: string
+	price: string
+}
 function App() {
 	const [tours, setTours] = useState<Tour[]>([])
 
@@ -32,6 +28,7 @@ function App() {
 	useEffect(() => {
 		fetchData()
 	}, [])
+	console.log(tours)
 
 	return (
 		<BrowserRouter>

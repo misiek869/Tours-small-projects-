@@ -1,7 +1,12 @@
 import Tours from '../components/Tours'
+import { type Tour } from '../App'
 
-const Home = () => {
-	return <Tours />
+interface HomeProps {
+	tours: Tour[]
+}
+
+const Home = ({ tours }: HomeProps) => {
+	return <Tours tours={tours} />
 }
 
 export default Home
