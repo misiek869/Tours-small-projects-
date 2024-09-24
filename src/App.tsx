@@ -13,28 +13,23 @@ export type Tour = {
 	price: string
 }
 
-function App() {
-	const [tours, setTours] = useState<Tour[]>([])
+export const fetchData = async (): Promise<Tour[]> => {
+	const { data, error } = await supabase.from('tours').select()
 
-	const fetchData = async () => {
-		const { data, error } = await supabase.from('tours').select()
-
-		if (error) {
-			console.error('Error fetching data:', error)
-		} else {
-			setTours(data)
-		}
+	if (error) {
+		console.error('Error fetching data:', error)
+		return []
 	}
+	return data as Tour[]
+}
 
-	useEffect(() => {
-		fetchData()
-	}, [])
-	console.log(tours)
+function App() {
+
 
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path='/' element={<Home tours={tours} />} />
+				<Route path='/' element={<Home />} />
 				<Route path='/create' element={<CreateTour />} />
 				<Route path='/:id' element={<UpdateTour />} />
 			</Routes>

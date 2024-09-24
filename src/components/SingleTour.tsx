@@ -8,4 +8,6 @@ const SingleTour = ({ tour }: SingleTourProps) => {
 	return <div>{tour.name}</div>
 }
 
+
+
 export default SingleTour
