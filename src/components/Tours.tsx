@@ -1,5 +1,5 @@
 import { type Tour } from '../App'
-import Tour from './Tour'
+import SingleTour from './SingleTour'
 
 interface HomeProps {
 	tours: Tour[]
@@ -14,7 +14,7 @@ const Tours = ({ tours }: HomeProps) => {
 			</div>
 			<div className='tours'>
 				{tours?.map(tour => {
-					return <Tour />
+					return <SingleTour key={tour.id} tour={tour} />
 				})}
 			</div>
 		</section>
