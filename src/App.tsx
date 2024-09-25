@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import supabase from './config/supabaseClient'
 import Tours from './components/Tours'
 import Loading from './components/Loading'
+import { number } from 'zod'
 
 export type Tour = {
 	id: number
@@ -15,7 +16,7 @@ function App() {
 	const [tours, setTours] = useState<Tour[]>([])
 	const [loading, setLoading] = useState<boolean>(true)
 
-	const removeTour = id => {
+	const removeTour = (id: number) => {
 		const newTours = tours.filter(tour => tour.id !== id)
 		setTours(newTours)
 	}
@@ -59,7 +60,7 @@ function App() {
 
 	return (
 		<main>
-			<Tours tours={tours} />
+			<Tours tours={tours} removeTour={removeTour} />
 		</main>
 	)
 }

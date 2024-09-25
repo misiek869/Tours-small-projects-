@@ -3,9 +3,10 @@ import { type Tour } from '../App'
 
 interface SingleTourProps {
 	tour: Tour
+	removeTour: (id: number) => void
 }
 
-const SingleTour = ({ tour }: SingleTourProps) => {
+const SingleTour = ({ tour, removeTour }: SingleTourProps) => {
 	const [readMore, setReadMore] = useState<boolean>(false)
 
 	const { name, image, info, price, id } = tour

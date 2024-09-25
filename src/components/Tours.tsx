@@ -3,9 +3,10 @@ import { type Tour } from '../App'
 
 type TourProps = {
 	tours: Tour[]
+	removeTour: (id: number) => void
 }
 
-const Tours = ({ tours }: TourProps) => {
+const Tours = ({ tours, removeTour }: TourProps) => {
 	return (
 		<section>
 			<div className='title'>
@@ -13,7 +14,7 @@ const Tours = ({ tours }: TourProps) => {
 				<div className='title-underline'></div>
 			</div>
 			{tours?.map(tour => {
-				return <SingleTour key={tour.id} tour={tour} />
+				return <SingleTour key={tour.id} tour={tour} removeTour={removeTour} />
 			})}
 		</section>
 	)
