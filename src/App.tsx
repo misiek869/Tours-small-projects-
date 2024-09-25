@@ -25,15 +25,13 @@ export const fetchData = async (): Promise<Tour[]> => {
 
 function App() {
 	return (
-		<BrowserRouter>
-			<main>
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/create' element={<CreateTour />} />
-					<Route path='/:id' element={<UpdateTour />} />
-				</Routes>
-			</main>
-		</BrowserRouter>
+		<main>
+			<Routes>
+				<Route path='/' element={<Home />} />
+				<Route path='/create' element={<CreateTour />} />
+				<Route path='/:id' element={<UpdateTour />} />
+			</Routes>
+		</main>
 	)
 }
 
