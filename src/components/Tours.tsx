@@ -1,6 +1,11 @@
 import SingleTour from './SingleTour'
+import { type Tour } from '../App'
 
-const Tours = () => {
+type TourProps = {
+	tours: Tour[]
+}
+
+const Tours = ({ tours }: TourProps) => {
 	return (
 		<section>
 			<div className='title'>
