@@ -1,7 +1,3 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import Home from './pages/Home'
-import CreateTour from './pages/CreateTour'
-import UpdateTour from './pages/UpdateTour'
 import { useState, useEffect } from 'react'
 import supabase from './config/supabaseClient'
 
@@ -24,15 +20,7 @@ export const fetchData = async (): Promise<Tour[]> => {
 }
 
 function App() {
-	return (
-		<main>
-			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='/create' element={<CreateTour />} />
-				<Route path='/:id' element={<UpdateTour />} />
-			</Routes>
-		</main>
-	)
+	return <main></main>
 }
 
 export default App
