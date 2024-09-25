@@ -50,7 +50,7 @@ function App() {
 			<main>
 				<div className='title'>
 					<h2>no tours left</h2>
-					<button className='btn' onClick={() => fetchData()}>
+					<button className='btn btn-refresh' onClick={() => fetchData()}>
 						refresh
 					</button>
 				</div>

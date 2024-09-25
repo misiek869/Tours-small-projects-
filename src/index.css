@@ -273,6 +273,10 @@ main {
 	color: var(--white);
 }
 
+.btn-refresh {
+	margin-top: 2rem;
+}
+
 @keyframes spinner {
 	to {
 		transform: rotate(360deg);
