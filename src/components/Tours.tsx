@@ -1,21 +1,25 @@
 import SingleTour from './SingleTour'
 import { type Tour } from '../App'
 
-type TourProps = {
+type ToursProps = {
 	tours: Tour[]
 	removeTour: (id: number) => void
 }
 
-const Tours = ({ tours, removeTour }: TourProps) => {
+const Tours = ({ tours, removeTour }: ToursProps) => {
 	return (
 		<section>
 			<div className='title'>
 				<h2>our tours</h2>
 				<div className='title-underline'></div>
 			</div>
-			{tours?.map(tour => {
-				return <SingleTour key={tour.id} tour={tour} removeTour={removeTour} />
-			})}
+			<div className='tours'>
+				{tours?.map(tour => {
+					return (
+						<SingleTour key={tour.id} tour={tour} removeTour={removeTour} />
+					)
+				})}
+			</div>
 		</section>
 	)
 }

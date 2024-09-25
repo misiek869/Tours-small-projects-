@@ -16,7 +16,7 @@ const SingleTour = ({ tour, removeTour }: SingleTourProps) => {
 			<img src={image} alt={name} className='img' />
 			<span className='tour-price'>${price}</span>
 			<div className='tour-info'>
-				<h4>{name}</h4>
+				<h5>{name}</h5>
 
 				<p>
 					{readMore ? info : `${info.substring(0, 200)}...`}
